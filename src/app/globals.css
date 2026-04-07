@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-background: #fbfbfb;
+  --color-item-background: #ece9df;
+  --color-border: #e0e0e0;
+  --color-selected: #fad48f;
+  --color-danger: #e74c3c;
+  --color-danger-bg: #F3A69E;
+  --color-emphasis: #FFFEEB;
+
+  --color-french-bg: #E6F3FF;
+  --color-spanish-bg: #FFE8D6;
+
+  --color-cefr-beginner-bg: #E6F4EA;
+  --color-cefr-beginner-text: #1B873B;
+  --color-cefr-intermediate-bg: #FEF7E0;
+  --color-cefr-intermediate-text: #B95000;
+  --color-cefr-advanced-bg: #FCE8E8;
+  --color-cefr-advanced-text: #D93026;
+  --color-cefr-a-bg: #E6F4EA;
+  --color-cefr-a-text: #1B873B;
+  --color-cefr-b-bg: #FEF7E0;
+  --color-cefr-b-text: #774800;
+  --color-cefr-c-bg: #FCE8E8;
+  --color-cefr-c-text: #D93026;
+
+  --color-streak-none: #f0f0f0;
+  --color-streak-short: #B3FFB3;
+  --color-streak-medium: #FFD6B3;
+  --color-streak-long: #FFB3B3;
+
+  --font-primary: 'Lora', serif;
+  --font-secondary: 'Montserrat', sans-serif;
+
+  --shadow-base: 0 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.15);
+
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1200px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fbfbfb;
+    color: #213547;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-in-out forwards;
 }
